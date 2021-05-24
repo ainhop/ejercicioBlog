@@ -1,0 +1,68 @@
+<div class="container mb-3">
+  <form #blogForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3 mt-3">
+      <label class="form-label">Title</label>
+      <input
+        required
+        type="text"
+        name="title"
+        class="form-control"
+        [(ngModel)]="model.title"
+      />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Text</label>
+      <textarea
+        required
+        name="text"
+        cols="30"
+        rows="10"
+        class="form-control"
+        [(ngModel)]="model.text"
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Image</label>
+      <input
+        required
+        type="text"
+        name="image"
+        class="form-control"
+        [(ngModel)]="model.image"
+      />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Author Name</label>
+      <input
+        required
+        type="text"
+        name="author"
+        class="form-control"
+        [(ngModel)]="model.author"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Category</label>
+      <select
+        required
+        name="category"
+        class="form-control"
+        [(ngModel)]="model.category"
+      >
+        <option *ngFor="let category of categories" [value]="category">
+          {{ category }}
+        </option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <button
+        [disabled]="!blogForm.form.valid"
+        type="submit"
+        class="btn btn-info"
+      >
+        Enviar
+      </button>
+    </div>
+  </form>
+</div>

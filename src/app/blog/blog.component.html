@@ -1,0 +1,49 @@
+<!-- <div
+  class="blog-post row"
+  *ngFor="let post of posts; let i = index"
+  [ngClass]="i % 2 === 0 ? 'row-reverse' : ''"
+>
+  <div class="col-7">
+    <h2 class="featurette-heading">{{ post.title }}</h2>
+    <p class="lead">{{ post.text }}</p>
+    <p class="lead">By: {{ post.author }}</p>
+  </div>
+  <div class="col-5">
+    <div>
+      <img [src]="post.image" />
+    </div>
+  </div>
+</div> -->
+<div class="container mb-3">
+  <div class="row mb-3">
+    <div class="col-12">
+      <label for="#filter">Filtro</label>
+      <select
+        id="filter"
+        class="form-select"
+        (change)="onChange($event.target.value)"
+        aria-label="Default select example"
+      >
+        <option selected [value]="null">Elige una categoría</option>
+        <option *ngFor="let category of categories" [value]="category">
+          {{ category }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4" *ngFor="let post of posts">
+      <div class="card">
+        <div class="card-image">
+          <div class="aspect-ratio-16x9">
+            <img [src]="post.image" class="card-img-top" alt="..." />
+          </div>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ post.title }}</h5>
+          <p class="card-text">{{ post.text }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
