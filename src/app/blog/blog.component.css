@@ -1,0 +1,25 @@
+/* .row-reverse {
+  flex-direction: row-reverse;
+} */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.aspect-ratio-16x9 {
+  position: relative;
+  padding-bottom: 56.25%;
+}
+
+.aspect-ratio-16x9 img {
+  position: absolute;
+  object-fit: contain;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 100%;
+}
+/* .blog-post {
+  margin-bottom: 5rem;
+} */
